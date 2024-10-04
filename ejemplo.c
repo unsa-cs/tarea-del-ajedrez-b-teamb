@@ -5,5 +5,7 @@ void display(){
   char** white = whiteSquare;
   char** gris = reverse(whiteSquare);
   char** result = join(white, gris);
-  interpreter(result);
+  
+  char** casillas = repeatH(result,4);
+  interpreter(casillas);
 }
