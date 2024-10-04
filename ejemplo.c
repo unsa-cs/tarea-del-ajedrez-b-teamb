@@ -3,5 +3,7 @@
 
 void display(){
   char** white = whiteSquare;
-  interpreter(white);
+  char** gris = reverse(whiteSquare);
+  char** result = join(white, gris);
+  interpreter(result);
 }
