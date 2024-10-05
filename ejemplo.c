@@ -4,5 +4,7 @@
 void display(){
   char** BlackRook = reverse(rook);
   char** impose = superImpose(BlackRook, whiteSquare); 
-  interpreter(impose);
+  char** impose2 = superImpose(knight, whiteSquare);
+  char** result = join(impose, impose2);
+  interpreter(result);
 }
