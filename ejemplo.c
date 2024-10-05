@@ -2,6 +2,7 @@
 #include "figures.h"
 
 void display(){
-  char** rotate = rotateL(rotateR(knight));
-  interpreter(rotate);
+  char** BlackRook = reverse(rook);
+  char** impose = superImpose(BlackRook, whiteSquare); 
+  interpreter(impose);
 }
