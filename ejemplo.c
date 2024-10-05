@@ -6,5 +6,6 @@ void display(){
   char** impose = superImpose(BlackRook, whiteSquare); 
   char** impose2 = superImpose(knight, whiteSquare);
   char** result = join(impose, impose2);
-  interpreter(result);
+  char** result2 = up(result, king);
+  interpreter(result2);
 }
