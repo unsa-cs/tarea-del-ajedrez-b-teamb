@@ -2,7 +2,6 @@
 #include "figures.h"
 
 void display(){
-  char** rey = king;
-  char** espejoV = flipV(rey);
-  interpreter(espejoV);
+  char** espejoH = flipH(knight);
+  interpreter(espejoH);
 }
