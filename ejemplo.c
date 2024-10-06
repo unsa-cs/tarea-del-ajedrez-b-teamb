@@ -8,7 +8,8 @@ void display(){
   char** figures[8] = {rook, knight, bishop, queen, king, bishop, knight, rook};
   char** rowf = join(figures[0], figures[1]);
   for(int i = 2; i < 8; i += 2){
-    rowf = join(figures[i], figures[i+1]);
+    char** tmp = join(figures[i], figures[i+1]);
+    rowf = join(rowf, tmp);
   }  
   interpreter(rowf);
 }
