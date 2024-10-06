@@ -18,7 +18,13 @@ void display(){
     row1 = join(row1, tmp);
     row2 = join(row2, tmpPawn);
   }
+  char** twoRows = up(row1, row2);
+  char** two = up(greySquare, whiteSquare); 
+  char** col1 = repeatV(two, 2);
+  char** col2 = reverse(col1);
+  char** twoCols = join(col1, col2);
+  char** fourRows = repeatH(twoCols, 4);
+  char** result = up(twoRows, fourRows);
 
-  char** result = up(row1, row2);
   interpreter(result);
 }
