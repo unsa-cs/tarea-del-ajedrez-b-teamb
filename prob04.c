@@ -13,6 +13,10 @@ void display(){
   char** rook2 = superImpose(rook, whiteSquare);
   char** result1 = join(rook1, knight1);
   char** result2 = join(bishop1, queen1);
-  char** result = join(result1, result2);
-  interpreter(result);
+  char** result3 = join(king1, bishop2);
+  char** result4 = join(knight2, rook2);
+  char** mid1 = join(result1, result2);
+  char** mid2 = join(result3, result4);
+  char** resultF = join(mid1, mid2);
+  interpreter(resultF);
 }
