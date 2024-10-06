@@ -11,7 +11,7 @@ void display(){
   char** row6[] = {grey, whiteSquare, grey, whiteSquare, grey, whiteSquare, grey, whiteSquare};
   char** row7[] = {whiteSquare, grey, whiteSquare, grey, whiteSquare, grey, whiteSquare, grey};
   char** row8[] = {grey, whiteSquare, grey, whiteSquare, grey, whiteSquare, grey, whiteSquare};
-  
+
   char** row1f = row1[0];
   char** row2f = row2[0];
   char** row3f = row3[0];
@@ -20,7 +20,7 @@ void display(){
   char** row6f = row6[0];
   char** row7f = row7[0];
   char** row8f = row8[0];
-
+ 
   for(int i = 1; i < 8; i++){
     row1f = join(row1f, row1[i]);
     row2f = join(row2f, row2[i]);  
@@ -30,7 +30,14 @@ void display(){
     row6f = join(row6f, row6[i]);
     row7f = join(row7f, row7[i]);
     row8f = join(row8f, row8[i]);
-  }  
-  interpreter(row5f);
+   }  
+
+  char** chessBoard[] = {row1f, row2f, row3f, row4f, row5f, row6f, row7f, row8f};
+  char** result = chessBoard[0];  
+
+  for(int i = 1; i < 8; i++){
+    result = up(result, chessBoard[i]);
+  }
+  interpreter(result);
 } 
 
