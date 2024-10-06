@@ -3,13 +3,15 @@
 
 void display(){
   char** grey = reverse(whiteSquare);
-  char** two = up(grey, whiteSquare); 
-  char** col1 = repeatV(two, 2);
-  char** col2 = reverse(col1);
-  char** twoCols = join(col1, col2);
-  char** fourRows = repeatH(twoCols, 4);
-  char** result = repeatV(fourRows, 1);
-
+  char** knight1 = superImpose(rotateR(knight), grey);
+  char** knight2 = superImpose(rotateL(knight), whiteSquare);
+  char** tablero[] = {knight1, whiteSquare, knight2, whiteSquare};
+  char** result = tablero[0];
+  for(int i = 1; i < 4; i++){
+    result = join(result, tablero[i]);
+  }
+  char** row2 = flipV(result);
+  result = up(result, row2);
   interpreter(result);
 }
 
