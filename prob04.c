@@ -14,5 +14,9 @@ void display(){
       final[i] = superImpose(figuras[i], filaCasillas[0]); 
     }
   }
-  interpreter(final[1]);
+  char** result = final[0];
+  for(int i = 1; i < 8; i++){
+    result = join(result, final[i]);
+  }
+  interpreter(result);
 }
