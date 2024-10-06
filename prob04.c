@@ -11,5 +11,8 @@ void display(){
   char** bishop2 = superImpose(bishop, whiteSquare);
   char** knight2 = superImpose(knight, greySquare);
   char** rook2 = superImpose(rook, whiteSquare);
-  interpreter(knight1);
+  char** result1 = join(rook1, knight1);
+  char** result2 = join(bishop1, queen1);
+  char** result = join(result1, result2);
+  interpreter(result);
 }
