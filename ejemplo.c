@@ -10,7 +10,8 @@ void display(){
   for(int i = 2; i < 8; i += 2){
     char** tmp = join(figures[i], figures[i+1]);
     rowf = join(rowf, tmp);
-  }  
-  interpreter(rowf);
+  }
+  char** finalRow = superImpose(rowf, row);
+  interpreter(finalRow);
 }
 
