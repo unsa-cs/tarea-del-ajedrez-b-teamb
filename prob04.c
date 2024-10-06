@@ -5,18 +5,16 @@ void display(){
   char** greySquare = reverse(whiteSquare);
   char** filaCasillas[2] = {whiteSquare, greySquare};
   char** figuras[8] = {rook, knight, bishop, queen, king, bishop, knight, rook};
-  char** final[8];
-  for(int i = 0; i < 8; i++){
+  char** result = superImpose(figuras[0], filaCasillas[1]);
+  for(int i = 1; i < 8; i++){
     if(i % 2 == 0){
-      final[i] = superImpose(figuras[i], filaCasillas[1]);
+      char** tmp = superImpose(figuras[i], filaCasillas[1]);
+      result = join(result, tmp);
     }
     else{
-      final[i] = superImpose(figuras[i], filaCasillas[0]); 
+      char** tmp = superImpose(figuras[i], filaCasillas[0]);
+      result = join(result, tmp);
     }
-  }
-  char** result = final[0];
-  for(int i = 1; i < 8; i++){
-    result = join(result, final[i]);
   }
   interpreter(result);
 }
