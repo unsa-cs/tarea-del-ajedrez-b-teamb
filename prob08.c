@@ -3,14 +3,16 @@
 
 void display(){
   char** grey = reverse(whiteSquare);
-  char** row1[] = {whiteSquare, grey, whiteSquare, grey, whiteSquare, grey, whiteSquare, grey};
-  char** row2[] = {grey, whiteSquare, grey, whiteSquare, grey, whiteSquare, grey, whiteSquare};
-  char** row3[] = {whiteSquare, grey, whiteSquare, grey, whiteSquare, grey, whiteSquare, grey};
-  char** row4[] = {grey, whiteSquare, grey, whiteSquare, grey, whiteSquare, grey, whiteSquare};
-  char** row5[] = {whiteSquare, grey, whiteSquare, grey, whiteSquare, grey, whiteSquare, grey};
-  char** row6[] = {grey, whiteSquare, grey, whiteSquare, grey, whiteSquare, grey, whiteSquare};
-  char** row7[] = {whiteSquare, grey, whiteSquare, grey, whiteSquare, grey, whiteSquare, grey};
-  char** row8[] = {grey, whiteSquare, grey, whiteSquare, grey, whiteSquare, grey, whiteSquare};
+  char** queenB = superImpose(reverse(queen), grey);
+  char** queenW = superImpose(reverse(queen), whiteSquare);
+  char** row1[] = {whiteSquare, grey, whiteSquare, grey, whiteSquare, queenB, whiteSquare, grey};
+  char** row2[] = {grey, whiteSquare, queenB, whiteSquare, grey, whiteSquare, grey, whiteSquare};
+  char** row3[] = {whiteSquare, grey, whiteSquare, grey, queenW, grey, whiteSquare, grey};
+  char** row4[] = {grey, whiteSquare, grey, whiteSquare, grey, whiteSquare, grey, queenW};
+  char** row5[] = {queenW, grey, whiteSquare, grey, whiteSquare, grey, whiteSquare, grey};
+  char** row6[] = {grey, whiteSquare, grey, queenW, grey, whiteSquare, grey, whiteSquare};
+  char** row7[] = {whiteSquare, queenB, whiteSquare, grey, whiteSquare, grey, whiteSquare, grey};
+  char** row8[] = {grey, whiteSquare, grey, whiteSquare, grey, whiteSquare, queenB, whiteSquare};
 
   char** row1f = row1[0];
   char** row2f = row2[0];
