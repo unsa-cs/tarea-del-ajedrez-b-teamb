@@ -19,5 +19,6 @@ void display(){
     row2 = join(row2, tmpPawn);
   }
 
-  interpreter(row2);
+  char** result = up(row1, row2);
+  interpreter(result);
 }
