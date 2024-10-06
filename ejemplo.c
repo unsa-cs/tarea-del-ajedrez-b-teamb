@@ -2,10 +2,14 @@
 #include "figures.h"
 
 void display(){
-  char** BlackRook = reverse(rook);
-  char** impose = superImpose(BlackRook, whiteSquare); 
-  char** impose2 = superImpose(knight, whiteSquare);
-  char** result = join(impose, impose2);
-  char** result2 = up(result, king);
-  interpreter(result2);
+  char** grey = reverse(whiteSquare);
+  char** result = join(grey, whiteSquare);
+  char** row = repeatH(result, 4);
+  char** figures[8] = {rook, knight, bishop, queen, king, bishop, knight, rook};
+  char** rowf = join(figures[0], figures[1]);
+  for(int i = 2; i < 8; i += 2){
+    rowf = join(figures[i], figures[i+1]);
+  }  
+  interpreter(rowf);
 }
+
