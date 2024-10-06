@@ -6,7 +6,7 @@ void display(){
   char** squares[2] = {whiteSquare, greySquare};
   char** rowResult;
 
-  for(int i = 0; i < 1; i++){
+  for(int i = 0; i < 8; i++){
     int k = (i % 2 == 0) ? 1 : 0;
     char** row = squares[k];
 
@@ -18,7 +18,12 @@ void display(){
       }
       row = join(row, squares[k]);
     }
-    rowResult = row;
+    if(i == 0){
+      rowResult = row;
+    }else{
+      rowResult = up(rowResult, row);
+    }
   }
+
   interpreter(rowResult);
 }
