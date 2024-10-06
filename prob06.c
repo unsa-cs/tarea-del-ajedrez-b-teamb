@@ -24,7 +24,7 @@ void display(){
   char** col2 = reverse(col1);
   char** twoCols = join(col1, col2);
   char** fourRows = repeatH(twoCols, 4);
-  char** result = up(twoRows, fourRows);
-
+  char** sixRows = up(twoRows, fourRows);
+  char** result = up(sixRows, reverse(row2));
   interpreter(result);
 }
