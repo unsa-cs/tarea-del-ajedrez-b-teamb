@@ -5,7 +5,7 @@ void display(){
   char** greySquare = reverse(whiteSquare);
   char** filaCasillas[2] = {whiteSquare, greySquare};
   char** figuras[8] = {rook, knight, bishop, queen, king, bishop, knight, rook};
-  char** result = superImpose(figuras[0], filaCasillas[1]);
+  char** result = superImpose(figuras[0], filaCasillas[0]);
   for(int i = 1; i < 8; i++){
     int j = (i % 2 == 0) ? 0 : 1;
     char** tmp = superImpose(figuras[i], filaCasillas[j]);
